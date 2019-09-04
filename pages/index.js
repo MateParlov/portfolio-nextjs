@@ -1,57 +1,76 @@
 import React from 'react';
 import BaseLayout from '../components/Layout/BaseLayout';
-import SuperComponent from '../components/SuperComponent';
-import axios from 'axios';
-
-class Index extends SuperComponent {
-  static async getInitialProps() {
-    let userData = {};
-    try {
-      const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/todos/1'
-      );
-      userData = response.data;
-    } catch (error) {
-      console.log(error);
-    }
-
-    return { initialData: [1, 2, 3, 4], userData };
-  }
-
+import { Button, Container, Row, Col } from 'reactstrap';
+import Typed from 'react-typed';
+class Index extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      title: 'I am Index page'
-    };
-    this.updateTitle = this.updateTitle.bind(this);
+    this.roles = [
+      'Developer',
+      'Tech Lover',
+      'React.js',
+      'Team Player',
+      'Next.js'
+    ];
   }
-
-  componentDidMount() {
-    console.log('component did mount');
-  }
-
-  componentDidUpdate() {
-    console.log('did update');
-  }
-  componentWillUnmount() {
-    console.log('will unmount');
-  }
-
-  updateTitle() {
-    this.setState({ title: 'updated Title' });
-  }
-
   render() {
-    const { title } = this.state;
-    const { initialData, userData } = this.props;
-
     return (
-      <BaseLayout>
-        <h1>I am class index</h1>
-        <h2>{title}</h2>
+      <BaseLayout className="cover">
+        <div className="main-section">
+          <div className="background-image">
+            <img src="static/images/background-index.png" />
+          </div>
 
-        <button onClick={this.updateTitle}>Change Title</button>
+          <Container>
+            <Row>
+              <Col md="6">
+                <div className="hero-section">
+                  <div className={`flipper`}>
+                    <div className="back">
+                      <div className="hero-section-content">
+                        <h2> Full Stack Web Developer </h2>
+                        <div className="hero-section-content-intro">
+                          Have a look at my portfolio and job history.
+                        </div>
+                      </div>
+                      <img
+                        className="image"
+                        src="./../static/images/section-1.png"
+                      />
+                      <div className="shadow-custom">
+                        <div className="shadow-inner"> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+              <Col md="6" className="hero-welcome-wrapper">
+                <div className="hero-welcome-text">
+                  <h1>
+                    Welcome to the portfolio website of Tomislav Sertić. Get
+                    informed, collaborate and discover projects I was working on
+                    through the years!
+                  </h1>
+                </div>
+                <div className="self-typed">
+                  <h1>
+                    <Typed
+                      strings={this.roles}
+                      startDelay={510}
+                      backDelay={2000}
+                      typeSpeed={40}
+                      backSpeed={50}
+                      loop
+                    />
+                  </h1>
+                </div>
+                <div className="hero-welcome-bio">
+                  <h1>Let's take a look on my work.</h1>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </BaseLayout>
     );
   }

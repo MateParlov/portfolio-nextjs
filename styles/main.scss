@@ -1,4 +1,18 @@
-.customClassFromFile {
-  color: blue;
-  text-decoration: underline;
+@import './shared/fonts';
+@import './shared/index';
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', 'Helvetica';
+  font-weight: normal;
 }
+
+.self-typed {
+  font-family: arial;
+  font-size: 31px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: white;
+}
+// WRAPPER
