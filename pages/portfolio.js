@@ -3,6 +3,7 @@ import BaseLayout from '../components/Layout/BaseLayout';
 import axios from 'axios';
 
 import { Link } from './../routes';
+import BasePage from '../components/BasePage';
 /* https://jsonplaceholder.typicode.com/posts */
 class Portfolio extends React.Component {
   static async getInitialProps() {
@@ -34,8 +35,10 @@ class Portfolio extends React.Component {
 
     return (
       <BaseLayout>
-        {this.renderPosts(postData)}
-        <p>I am Portfolio page</p>
+        <BasePage>
+          {this.renderPosts(postData)}
+          <p>I am Portfolio page</p>
+        </BasePage>
       </BaseLayout>
     );
   }

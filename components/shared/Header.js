@@ -35,7 +35,9 @@ class Header extends React.Component {
 } */
 
 import React from 'react';
-import {
+import Link from 'next/link';
+/* import './../../styles/main.scss';
+ */ import {
   Collapse,
   Navbar,
   NavbarToggler,
@@ -48,6 +50,20 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+
+const BsNavlink = ({ link, name, brand }) => {
+  return (
+    <Link href={link}>
+      <a
+        className={
+          brand ? 'navbar-brand port-navbar-brand' : 'nav-link port-navbar-link'
+        }
+      >
+        {name}
+      </a>
+    </Link>
+  );
+};
 
 class Header extends React.Component {
   constructor(props) {
@@ -65,27 +81,32 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">TS</NavbarBrand>
+      <div className="Header">
+        <Navbar
+          className="port-navbar port-default absolute"
+          color="transparent"
+          light
+          expand="md"
+        >
+          <BsNavlink name="TS" link="/" brand />
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/about">About</NavLink>
+              <NavItem className="port-navbar-item">
+                <BsNavlink name="About" link="/about" />
               </NavItem>
-              <NavItem>
-                <NavLink href="/portfolio">Porfolio</NavLink>
+              <NavItem className="port-navbar-item">
+                <BsNavlink name="Portfolio" link="/portfolio" />
               </NavItem>
-              <NavItem>
-                <NavLink href="/blogs">Blogs</NavLink>
+              <NavItem className="port-navbar-item">
+                <BsNavlink name="Blogs" link="/blogs" />
               </NavItem>
-              <NavItem>
-                <NavLink href="/cv">Cv</NavLink>
+              <NavItem className="port-navbar-item">
+                <BsNavlink name="Cv" link="/cv" />
               </NavItem>
 
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle nav caret className="port-navbar-link">
                   Social Sites
                 </DropdownToggle>
                 <DropdownMenu right>

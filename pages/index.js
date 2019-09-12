@@ -7,10 +7,13 @@ class Index extends React.Component {
     super(props);
     this.roles = [
       'Developer',
-      'Tech Lover',
+      /* 'Tech Lover',
       'React.js',
       'Team Player',
-      'Next.js'
+      'Next.js', */
+      'Anita Hater',
+      'Snupo Hater',
+      'Djukos best friend'
     ];
   }
   render() {

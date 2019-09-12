@@ -119,6 +119,37 @@
   border: 2px solid #f37d49;
   box-shadow: -17px 13px 41px rgba(13, 78, 158, 0.3); }
 
+.Header .port-navbar,
+.Header .post-default {
+  width: 100%;
+  z-index: 15;
+  padding: 40px; }
+  .Header .port-navbar .port-navbar-brand,
+  .Header .post-default .port-navbar-brand {
+    color: white;
+    font-size: 34px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold; }
+  .Header .port-navbar .port-navbar-item,
+  .Header .post-default .port-navbar-item {
+    margin-left: 10px;
+    margin-right: 10px; }
+  .Header .port-navbar .port-navbar-link,
+  .Header .post-default .port-navbar-link {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    font-size: 18px;
+    text-transform: uppercase; }
+    .Header .port-navbar .port-navbar-link.active,
+    .Header .post-default .port-navbar-link.active {
+      color: #dba919; }
+    .Header .port-navbar .port-navbar-link:hover, .Header .port-navbar .port-navbar-link:focus,
+    .Header .post-default .port-navbar-link:hover,
+    .Header .post-default .port-navbar-link:focus {
+      color: #dba919; }
+
 html,
 body {
   height: 100%;
@@ -126,12 +157,18 @@ body {
   font-family: 'Montserrat', 'Helvetica';
   font-weight: normal; }
 
+.base-page {
+  padding-top: 150px; }
+
 .self-typed {
   font-family: arial;
   font-size: 31px;
   font-weight: bolder;
   letter-spacing: 2px;
   color: white; }
+
+.absolute {
+  position: absolute; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
